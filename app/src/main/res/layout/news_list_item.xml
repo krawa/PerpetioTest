@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="item" type="com.krawa.perpetiotest.model.News" />
+        <variable name="presenter" type="com.krawa.perpetiotest.presentation.presenter.NewsFeedPresenter"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#01579b"
+                android:text="@{item.title}"
+                tools:text="News title. Duis in elementum mi, in imperdiet erat. Praesent feugiat dignissim vulputate. Suspendisse sit amet ante a ligula egestas fdgdfgd fgdf dfg dfgfgfd fgdd. Duis in elementum mi, in imperdiet erat. Praesent feugiat dignissim vulputate."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="@{item.subtitle}"
+                tools:text="News body. Duis in elementum mi, in imperdiet erat. Praesent feugiat dignissim vulputate. Suspendisse sit amet ante a ligula egestas fdgdfgd fgdf dfg dfgfgfd fgdd. Duis in elementum mi, in imperdiet erat. Praesent feugiat dignissim vulputate."/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="84dp"
+            android:layout_marginLeft="8dp"
+            android:src="@{item.thumb.link}"
+            tools:src="#000"/>
+
+    </LinearLayout>
+
+</layout>
