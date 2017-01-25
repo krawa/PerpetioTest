@@ -2,9 +2,10 @@ package com.krawa.perpetiotest.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class News {
+import java.io.Serializable;
 
-    @SerializedName("_id")
+public class News implements Serializable{
+
     private String id;
     private String title;
     private String subtitle;

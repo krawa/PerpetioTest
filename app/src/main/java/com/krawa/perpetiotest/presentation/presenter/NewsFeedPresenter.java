@@ -3,15 +3,18 @@ package com.krawa.perpetiotest.presentation.presenter;
 import com.arellomobile.mvp.InjectViewState;
 import com.krawa.perpetiotest.App;
 import com.krawa.perpetiotest.R;
+import com.krawa.perpetiotest.model.News;
 import com.krawa.perpetiotest.network.RestAPI;
 import com.krawa.perpetiotest.network.response.NewsFeedResponse;
 import com.krawa.perpetiotest.presentation.view.NewsFeedView;
+import com.krawa.perpetiotest.ui.Screen;
 
 import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import ru.terrakok.cicerone.Router;
 
 @InjectViewState
 public class NewsFeedPresenter extends BaseListFragmentPresenter<NewsFeedView> {
@@ -20,6 +23,8 @@ public class NewsFeedPresenter extends BaseListFragmentPresenter<NewsFeedView> {
 
     @Inject
     RestAPI restAPI;
+    @Inject
+    Router router;
 
     public NewsFeedPresenter(){
         App.getAppComponent().inject(this);
@@ -55,5 +60,8 @@ public class NewsFeedPresenter extends BaseListFragmentPresenter<NewsFeedView> {
         });
     }
 
+    public void onItemClick(News news){
+        router.navigateTo(Screen.ARTICLE, news);
+    }
 
 }

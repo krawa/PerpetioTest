@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.krawa.perpetiotest.App;
 import com.krawa.perpetiotest.R;
+import com.krawa.perpetiotest.model.News;
 import com.krawa.perpetiotest.ui.Screen;
 import com.krawa.perpetiotest.ui.fragment.ArticleFragment;
 import com.krawa.perpetiotest.ui.fragment.NewsFeedFragment;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 case Screen.NEWS_FEED:
                     return new NewsFeedFragment();
                 case Screen.ARTICLE:
-                    return ArticleFragment.newInstance((String) data);
+                    return ArticleFragment.newInstance((News) data);
             }
             return null;
         }

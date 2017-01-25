@@ -1,6 +1,7 @@
 package com.krawa.perpetiotest.binding;
 
 import android.databinding.BindingAdapter;
+import android.webkit.WebView;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -36,6 +37,12 @@ public class BindAdapter {
     @BindingAdapter({"android:src"})
     public static void setImageViewResource(ImageView imageView, int resource) {
         imageView.setImageResource(resource);
+    }
+
+    @BindingAdapter({"app:loadDataString"})
+    public static void loadStringWebView(WebView webView, String text) {
+        String html = "<html><body>" + text + "</body></html>";
+        webView.loadData(html, "text/html; charset=utf-8", "UTF-8");
     }
 
 }

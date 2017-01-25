@@ -1,6 +1,8 @@
 package com.krawa.perpetiotest.model;
 
-public class Thumb {
+import java.io.Serializable;
+
+public class Thumb implements Serializable{
 
     private String link;
     private String md5;

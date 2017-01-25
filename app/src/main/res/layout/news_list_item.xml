@@ -15,7 +15,9 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp">
+        android:paddingBottom="8dp"
+        android:onClick="@{(view) -> presenter.onItemClick(item)}"
+        android:foreground="?android:attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -30,7 +32,7 @@
                 android:ellipsize="end"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#01579b"
+                android:textColor="@color/colorTextAcc"
                 android:text="@{item.title}"
                 tools:text="News title. Duis in elementum mi, in imperdiet erat. Praesent feugiat dignissim vulputate. Suspendisse sit amet ante a ligula egestas fdgdfgd fgdf dfg dfgfgfd fgdd. Duis in elementum mi, in imperdiet erat. Praesent feugiat dignissim vulputate."/>
 
